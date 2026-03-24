@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineBook | Next-Gen Cinema Experience</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="startup-nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-dot"></div>
+                <h1>CineBook.</h1>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#movies" class="active">Now Showing</a>
+                <a href="#cinemas">Cinemas</a>
+                <a href="#experiences">Experiences</a>
+            </div>
+
+            <div class="nav-actions">
+                <div class="search-pill">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search movies...">
+                </div>
+                <button class="btn-primary-outline" id="auth-btn" onclick="openAuthModal()">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-bg-blur" id="hero-bg"></div>
+        
+        <div class="hero-content-wrapper">
+            <div class="hero-text">
+                <div class="badge-premium"><i class="fa-solid fa-bolt"></i> Trending #1</div>
+                <h2 class="hero-title" id="hero-title">Dhurandhar The Revenge</h2>
+                
+                <div class="hero-meta">
+                    <span><i class="fa-solid fa-star"></i> 9.5/10</span>
+                    <span class="dot-separator">•</span>
+                    <span>2h 45m</span>
+                    <span class="dot-separator">•</span>
+                    <span id="hero-genre">Action, Thriller</span>
+                    <span class="dot-separator">•</span>
+                    <span class="cert-box">UA</span>
+                </div>
+                
+                <p class="hero-description" id="hero-desc">
+                    An explosive tale of vengeance and power. When the system fails, one man rises to rewrite the rules of justice and take down the empire.
+                </p>
+                
+                <div class="hero-cta">
+                    <button class="btn-primary-solid" onclick="scrollToBooking()">
+                        Get Tickets <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                    <button class="btn-text-only">
+                        <i class="fa-regular fa-circle-play"></i> Watch Trailer
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="poster-frame">
+                    <img src="images/Dhurandhar.jpg" alt="Dhurandhar Poster" id="hero-poster">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="movies-section" id="movies">
+        <div class="section-header">
+            <h3>Now Showing</h3>
+            <p>Handpicked cinematic experiences for you.</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-card active" onclick="updateHero('Dhurandhar The Revenge', 'images/Dhurandhar.jpg', 'Action, Thriller', 'An explosive tale of vengeance and power.')">
+                <img src="images/Dhurandhar.jpg" alt="Dhurandhar" class="bento-img">
+                <div class="bento-info">
+                    <h4>Dhurandhar</h4>
+                    <span class="bento-genre">Action</span>
+                </div>
+            </div>
+
+            <div class="bento-card" onclick="updateHero('Toxic: A Fairy Tale', 'images/Toxic.jpg', 'Action, Crime', 'Starring Rocking Star Yash, a high-octane action thriller.')">
+                <img src="images/Toxic.jpg" alt="Toxic" class="bento-img">
+                <div class="bento-info">
+                    <h4>Toxic</h4>
+                    <span class="bento-genre">Crime</span>
+                </div>
+            </div>
+
+            <div class="bento-card" onclick="updateHero('Pushpa 2: The Rule', 'images/Pushpa.jpg', 'Action, Drama', 'Pushpa Raj is back to rule the syndicate.')">
+                <img src="images/Pushpa.jpg" alt="Pushpa 2" class="bento-img">
+                <div class="bento-info">
+                    <h4>Pushpa 2</h4>
+                    <span class="bento-genre">Drama</span>
+                </div>
+            </div>
+
+            <div class="bento-card" onclick="updateHero('Baahubali 2: The Conclusion', 'images/Baahubali.jpg', 'Epic, Historical', 'The epic saga of Mahishmati continues with breathtaking visuals.')">
+                <img src="images/Baahubali.jpg" alt="Baahubali 2" class="bento-img">
+                <div class="bento-info">
+                    <h4>Baahubali 2</h4>
+                    <span class="bento-genre">Epic</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-engine" id="booking-area">
+        <div class="booking-container">
+            
+            <div class="booking-controls">
+                <div class="control-group">
+                    <label>Date</label>
+                    <div class="pill-group">
+                        <div class="select-pill active">Today, 24 Mar</div>
+                        <div class="select-pill">Tomorrow, 25 Mar</div>
+                        <div class="select-pill">Wed, 26 Mar</div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>Cinema & Time</label>
+                    <div class="cinema-card">
+                        <div class="cinema-details">
+                            <h5>Miraj Cinemas</h5>
+                            <p>City Centre Mall, Ajmer</p>
+                        </div>
+                        <div class="time-pill">09:30 PM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="seat-map-module">
+                <div class="screen-indicator">
+                    <div class="screen-line"></div>
+                    <span>SCREEN</span>
+                </div>
+
+                <div class="seat-grid" id="seat-grid">
+                    </div>
+
+                <div class="seat-legend-minimal">
+                    <span><div class="dot available"></div> Available</span>
+                    <span><div class="dot selected"></div> Selected</span>
+                    <span><div class="dot occupied"></div> Occupied</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="checkout-toast" id="checkout-bar">
+        <div class="toast-content">
+            <div class="toast-text">
+                <span class="toast-label">Total Amount</span>
+                <h3 class="toast-price" id="grand-total">₹0</h3>
+                <p class="toast-seats">Seats: <span id="selected-seats-list">-</span></p>
+            </div>
+            <button class="btn-checkout-glow" id="pay-btn" disabled onclick="processPayment()">
+                Confirm Payment
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="success-modal" style="display: none;">
+        <div class="premium-ticket-card">
+            <div class="ticket-status">
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Confirmed</span>
+            </div>
+            <h3 class="ticket-movie" id="ticket-movie-name">Dhurandhar</h3>
+            
+            <div class="ticket-data-grid">
+                <div>
+                    <label>Date</label>
+                    <strong>24 Mar, 2026</strong>
+                </div>
+                <div>
+                    <label>Time</label>
+                    <strong>09:30 PM</strong>
+                </div>
+                <div>
+                    <label>Seats</label>
+                    <strong class="text-highlight" id="ticket-seats">-</strong>
+                </div>
+                <div>
+                    <label>Order ID</label>
+                    <strong id="ticket-id">CINE-0000</strong>
+                </div>
+            </div>
+            
+            <button class="btn-primary-solid w-100 mt-3" onclick="closeSuccessModal()">
+                Close Ticket
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="auth-modal" style="display: none;">
+        <div class="premium-auth-card">
+            <button class="close-modal-btn" onclick="closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div id="login-section">
+                <h3>Welcome Back</h3>
+                <p class="auth-subtitle">Sign in to continue your cinematic journey.</p>
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button class="btn-primary-solid w-100" onclick="loginUser()">Sign In</button>
+                <p class="auth-switch">New to CineBook? <span onclick="toggleAuthForms()">Create an account</span></p>
+            </div>
+
+            <div id="register-section" style="display: none;">
+                <h3>Join CineBook</h3>
+                <p class="auth-subtitle">Unlock exclusive perks and faster bookings.</p>
+                <div class="input-group">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="regName" placeholder="Full Name" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="email" id="regEmail" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="regPassword" placeholder="Password" required>
+                </div>
+                <button class="btn-primary-solid w-100" onclick="registerUser()">Sign Up</button>
+                <p class="auth-switch">Already a member? <span onclick="toggleAuthForms()">Sign In</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
