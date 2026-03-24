@@ -30,3 +30,34 @@ This repository contains the complete full-stack project, organized into distinc
  ┣ 📂 backend                 # Primary Spring Boot Application (REST APIs)
  ┣ 📂 frontend                # Main UI files (index.html, style.css, script.js)
  ┗ 📂 backend-old-corejava    # Legacy Core Java version (Archived for reference)
+⚙️ How to Run Locally
+1. Start the Backend (Spring Boot)
+Navigate to the backend directory.
+
+Ensure you have Java 17+ and Maven installed.
+
+Update your database credentials in application.properties (if using MySQL).
+
+Run the application using Maven:
+
+Bash
+./mvnw spring-boot:run
+The backend server will start at http://localhost:8080.
+
+2. Start the Frontend
+Navigate to the frontend directory.
+
+Simply open index.html in your favorite web browser (Chrome, Edge, Firefox).
+
+The frontend is configured to communicate with the local backend running on port 8080.
+
+📸 Screenshots
+(Add screenshots of your project here by dragging and dropping images into this README file on GitHub)
+
+Home & Movie Selection - [Screenshot Placeholder]
+
+Interactive Seat Layout - [Screenshot Placeholder]
+
+Confirmed E-Ticket - [Screenshot Placeholder]
+
+👨‍💻 Developed by: Sonu Kumawat | 2nd Year Engineering Student
